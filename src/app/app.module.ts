@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MockComponent } from './mock/mock-data.component';
+import { HeroesComponent } from './heroes/heroes.component';
 
 @NgModule({
   declarations: [
-    AppComponent,MockComponent
+    AppComponent,MockComponent,HeroesComponent
   ],
   imports: [
     BrowserModule

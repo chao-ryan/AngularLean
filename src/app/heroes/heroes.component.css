@@ -1,0 +1,32 @@
+h1{
+    color: tomato;
+    text-align: center;
+}
+
+th{
+    font-size: 2rem;
+    width: 2rem;
+    color: green;
+    text-align: center;
+    border: solid gray 2px;
+}
+td{
+    font-size: 2rem;
+    width: 2rem;
+    color: tomato;
+    text-align: center;
+    border: solid gray 2px;
+}
+.hero-box{
+    padding-left: 45%;
+}
+.hero-id{
+    font-size: 1rem;
+    color: gray;
+    text-align: center;
+}
+.hero_name{
+    font-size: 1rem;
+    color: tomato;
+    text-align: center;
+}
