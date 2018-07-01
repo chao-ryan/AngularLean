@@ -1,0 +1,17 @@
+<h1 style="text-align: center">{{test}}</h1>
+<div class="box">
+    <table>
+        <thead>
+            <th class="{{style.ID}}">{{header[0]}}</th>
+            <th class="{{style.Name}}">{{header[1]}}</th>
+            <th class="{{style.Score}}">{{header[2]}}</th>
+        </thead>
+        <tbody *ngFor="let dataTmp of datas">
+            <tr>
+                <td class="{{style.ID}}">{{dataTmp.ID}}</td>
+                <td class="{{style.Name}}">{{dataTmp.Name}}</td>
+                <td class="{{style.Score}}">{{dataTmp.Score}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
