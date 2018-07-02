@@ -13,3 +13,8 @@
         </tbody>
     </table>
 </div>
+<!-- [(ngModel)]是添加双向数据绑定语法 -->
+<input type="text" [(ngModel)]="heroStyle" placeholder="请在这里输入">
+<!-- (click)=是添加点击事件语法 -->
+<button class="hero-btn" (click)="heroClickEvent(heroStyle)">点击事件</button>
+<div>{{heroStyle}}</div>

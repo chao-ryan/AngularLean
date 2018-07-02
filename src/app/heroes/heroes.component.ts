@@ -10,11 +10,17 @@ import { Hero } from '../hero';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
+
+  heroStyle:any;
   hero: Hero = {
       id:1,
       name:"windStorm"
   };
 
+  // 添加点击事件
+  heroClickEvent(heroStyle:any){
+    alert(heroStyle);
+  }
 
   // 构造器--构造一个服务组件（如果需要使用服务，则必须）
   constructor(){}
