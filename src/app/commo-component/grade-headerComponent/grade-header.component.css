@@ -1,0 +1,38 @@
+th{
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 4rem;
+    text-align: center;
+    background-color: rgb(94, 153, 231);
+}
+td{
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 3rem;
+    text-align: center;
+    background-color: rgb(147, 200, 209);
+}
+button{
+    width: 3rem;
+    font-size: 1.2rem;
+    background-color: rgb(94, 153, 231);
+    border-style: none;
+    border: solid 1px rgb(39, 72, 116);
+}
+/* 成绩显示列 */
+.scoreRow{
+    width: 8rem;
+    padding-left: 1rem;
+}
+/* 按钮框 */
+.btn-box{
+    width: 3rem;
+    float: left;
+}
+/* 成绩显示框 */
+.score-box{
+    width: 2rem;
+    float: left;
+    font-size: 1.2rem;
+    
+}
