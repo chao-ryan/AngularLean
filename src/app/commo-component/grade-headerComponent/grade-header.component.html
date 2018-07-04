@@ -1,4 +1,4 @@
-<h1>{{header[0]}}</h1>
+
 <table>
     <thead>
         <th>{{header[0]}}</th>
@@ -10,13 +10,13 @@
         <td>{{data.MyID}}</td>
         <td>{{data.MyName}}</td>
         <td class="scoreRow">
-            <div class="btn-box">
+            <div class="btn-box" (click)="incScoreClick(data)">
                 <button>+</button>
             </div>            
             <div class="score-box">
-                {{data.Score}}
+                <input type="text" [(ngModel)]="data.Score">
             </div>
-            <div class="btn-box">
+            <div class="btn-box" (click)="decScoreClick(data)">
                 <button>-</button>
             </div>            
         </td>

@@ -15,9 +15,10 @@ td{
 button{
     width: 3rem;
     font-size: 1.2rem;
-    background-color: rgb(94, 153, 231);
+    background-color: rgb(54, 167, 187);
     border-style: none;
-    border: solid 1px rgb(39, 72, 116);
+    border-style: none;
+    border: solid 1px rgb(94, 153, 231);
 }
 /* 成绩显示列 */
 .scoreRow{
@@ -34,5 +35,11 @@ button{
     width: 2rem;
     float: left;
     font-size: 1.2rem;
-    
+}
+.score-box input{
+    width: 2rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border-style: none;
+    background-color: rgb(147, 200, 209);
 }
