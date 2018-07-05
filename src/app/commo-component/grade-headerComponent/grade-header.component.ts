@@ -1,5 +1,6 @@
-import { Component , OnInit} from '@angular/core';
+import { Component , OnInit, Input} from '@angular/core';
 import { BaseService } from '../../commo-service/baseService.service';
+import { Grade } from '../../commo-module/grade';
 
 /**
  * GradeHeaderComponent 这是一个组件
@@ -15,6 +16,11 @@ export class GradeHeaderComponent implements OnInit {
   jsonObj:any;
   header:any;
   body:any;
+
+  // 带有单向输入@Input装饰器的属性
+  @Input() score:any;
+  // 主从组件
+  grade:Grade;
 
   tmp:string = "我是傻子";
   // 构造器--构造一个服务组件（必须）

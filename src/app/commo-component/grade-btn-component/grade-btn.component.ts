@@ -16,6 +16,9 @@ export class GradeBtnComponent implements OnInit {
   header:any;
   body:any;
 
+  // 需要绑定子组件的属性
+  data:any;
+
   // 构造器--构造一个服务组件（必须）
   constructor(private baseService: BaseService){}
 
