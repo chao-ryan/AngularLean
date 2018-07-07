@@ -1,5 +1,5 @@
 import { Component , OnInit} from '@angular/core';
-import { Hero } from '../hero';
+import { Hero } from '../../commo-module/hero';
 
 /**
  * HeroesComponent 这是一个组件(类)

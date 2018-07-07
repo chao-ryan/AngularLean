@@ -1,5 +1,5 @@
 import { Component , OnInit} from '@angular/core';
-import { MockService } from '../mock.service';
+import { MockService } from '../../commo-service/mock.service';
 
 /**
  * MockComponent 这是一个组件

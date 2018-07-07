@@ -1,5 +1,6 @@
-import { Injectable } from "../../node_modules/@angular/core";
-import { MockData } from "./mock-data";
+import { Injectable } from "@angular/core";
+import { MockData } from "../commo-module/mock-data";
+
 
 /**
  * MockService 这是一个服务组件

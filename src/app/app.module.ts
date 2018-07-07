@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { MockComponent } from './mock/mock-data.component';
-import { HeroesComponent } from './heroes/heroes.component';
+import { MockComponent } from './commo-component/mock/mock-data.component';
+import { HeroesComponent } from './commo-component/heroes/heroes.component';
 import { GradeHeaderComponent } from './commo-component/grade-headerComponent/grade-header.component';
 import { GradeBtnComponent } from './commo-component/grade-btn-component/grade-btn.component';
 
