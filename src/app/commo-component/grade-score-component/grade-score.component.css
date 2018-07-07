@@ -1,0 +1,22 @@
+/* 按钮框 */
+.btn-box{
+    width: 3rem;
+    float: left;
+}
+/* 成绩显示框 */
+/* .score-box{
+    width: 2rem;
+    float: left;
+    font-size: 1.2rem;
+} */
+.common{
+    width: 2rem;
+    float: left;
+    font-size: 1.2rem;
+}
+.not-qualified{
+    width: 2rem;
+    float: left;
+    color: red;
+    font-size: 1.2rem;
+}

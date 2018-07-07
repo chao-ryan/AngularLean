@@ -1,0 +1,11 @@
+<div>
+    <div class="btn-box" (click)="incScoreClick()">
+        <button>+</button>
+    </div>            
+    <div class={{scoreStyle}}>
+        <input type="text" [(ngModel)]="score">
+    </div>
+    <div class="btn-box" (click)="decScoreClick()">
+        <button>-</button>
+    </div>
+</div>

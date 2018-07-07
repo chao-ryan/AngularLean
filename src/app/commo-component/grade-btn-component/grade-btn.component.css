@@ -8,9 +8,18 @@ button{
     color: aliceblue;
     background-color: rgb(66, 118, 177);
 }
-.tab-box{
+.grade-btn{
     width: 100%;
     margin-left: 10rem;
+}
+.grade-btn button.selected:hover{
+    background-color: rgb(223, 119, 51) !important;
+    color: white;
+}
+.grade-btn button:hover{
+    color: rgb(20, 126, 179);
+    background-color: #DDD;
+    left: .1em;
 }
 .btn-box{
     width: 100%;

@@ -1,13 +1,14 @@
-<div class="tab-box">
+<div class="grade-btn">
     <div class="btn-box">
-        <div class="getData-btn" (click)="getData()">
+        <div class="getData-btn" [class.selected]="data === originData" (click)="getData()">
             <button type="button">getData</button>
         </div>
-        <div class="checkData-btn" (click)="checkData()">
+        <div class="checkData-btn" [class.selected]="checkScore === originScore" (click)="checkData()">
             <button type="button">checkData</button>
         </div>
     </div><br/>
     <div class="grade-tab">
-        <gradeHeader-app [score]="data"></gradeHeader-app>
+        
     </div>
 </div>
+<grade-tab-app [jsonObj]="originJsonObj" [scoreStyle]="scoreStyle"></grade-tab-app>

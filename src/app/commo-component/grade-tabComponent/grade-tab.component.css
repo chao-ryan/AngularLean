@@ -25,17 +25,6 @@ button{
     width: 8rem;
     padding-left: 1rem;
 }
-/* 按钮框 */
-.btn-box{
-    width: 3rem;
-    float: left;
-}
-/* 成绩显示框 */
-.score-box{
-    width: 2rem;
-    float: left;
-    font-size: 1.2rem;
-}
 .score-box input{
     width: 2rem;
     font-size: 1.3rem;
