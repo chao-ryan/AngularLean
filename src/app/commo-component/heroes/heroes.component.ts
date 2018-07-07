@@ -1,4 +1,5 @@
 import { Component , OnInit} from '@angular/core';
+import { HEROES } from '../../const-def/hero-const-def';
 import { Hero } from '../../commo-module/hero';
 
 /**
@@ -11,11 +12,17 @@ import { Hero } from '../../commo-module/hero';
 })
 export class HeroesComponent implements OnInit {
 
-  heroStyle:any;
-  hero: Hero = {
-      id:1,
-      name:"windStorm"
-  };
+  heroStyle: any;
+  heroes = HEROES;
+  selectedHero: Hero;
+  
+  /**
+   * onSelect 点击英雄时触发
+   * @param hero 页面中被点击的英雄对象
+   */
+  onSelect(hero: Hero):void{
+    this.selectedHero = hero;
+  }
 
   // 添加点击事件
   heroClickEvent(heroStyle:any){

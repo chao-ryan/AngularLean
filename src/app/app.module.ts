@@ -7,10 +7,11 @@ import { MockComponent } from './commo-component/mock/mock-data.component';
 import { HeroesComponent } from './commo-component/heroes/heroes.component';
 import { GradeHeaderComponent } from './commo-component/grade-headerComponent/grade-header.component';
 import { GradeBtnComponent } from './commo-component/grade-btn-component/grade-btn.component';
+import { HeroDetailComponent } from './commo-component/hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent,MockComponent,HeroesComponent,GradeHeaderComponent,GradeBtnComponent
+    AppComponent,MockComponent,HeroesComponent,GradeHeaderComponent,GradeBtnComponent,HeroDetailComponent
   ],
   imports: [
     BrowserModule,FormsModule                //FormsModule是使用双向数据绑定必须要的，否则浏览器无法正常工作
