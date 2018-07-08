@@ -3,7 +3,8 @@ import { HEROES } from '../../const-def/hero-const-def';
 import { Hero } from '../../commo-module/hero';
 
 /**
- * HeroesComponent 这是一个组件(类)
+ * HeroesComponent 这是一个组件(类) 
+ * 要显示该组件内容，可在浏览器URL栏输入：http://localhost:4200/heroes
  */
 @Component({
   selector: 'hero-app',

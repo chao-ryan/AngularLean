@@ -2,7 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import { MockService } from '../../commo-service/mock.service';
 
 /**
- * MockComponent 这是一个组件
+ * MockComponent 这是一个组件  <mock-app>路由：http://localhost:4200/mock
  */
 @Component({
   selector: 'mock-app',

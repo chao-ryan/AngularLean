@@ -1,18 +1,18 @@
 <div>
     <table>
-    <thead>
-        <th>{{headers[0]}}</th>
-        <th>{{headers[1]}}</th>
-        <th>{{headers[2]}}</th>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let data of datas">
-        <td>{{data.MyID}}</td>
-        <td>{{data.MyName}}</td>
-        <td class="scoreRow">
-            <grade-score-app [score]="data.Score" [scoreStyle]="scoreStyleTmp"></grade-score-app>            
-        </td>
-    </tr>
-    </tbody>    
+        <thead>
+            <th>{{headers[0]}}</th>
+            <th>{{headers[1]}}</th>
+            <th>{{headers[2]}}</th>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let data of datas">
+            <td>{{data.MyID}}</td>
+            <td>{{data.MyName}}</td>
+            <td class="scoreRow">
+                <grade-score-app [score]="data.Score" [scoreStyle]="scoreStyleTmp"></grade-score-app>            
+            </td>
+        </tr>
+        </tbody>    
 </table>
 </div>

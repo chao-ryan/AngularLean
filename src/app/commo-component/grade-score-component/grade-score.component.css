@@ -1,3 +1,6 @@
+.score-box{
+    /* font-size: 1rem; */
+}
 /* 按钮框 */
 .btn-box{
     width: 3rem;
@@ -9,14 +12,40 @@
     float: left;
     font-size: 1.2rem;
 } */
-.common{
+.score-input{
     width: 2rem;
     float: left;
     font-size: 1.2rem;
+    padding-left: 0.5rem;
+    padding-top: 0.1rem;
+}
+.common{
+    color: black;
 }
 .not-qualified{
-    width: 2rem;
-    float: left;
     color: red;
+}
+input{
+    width: 2rem;
     font-size: 1.2rem;
+    border-style: none;
+    background-color: rgb(147, 200, 209);
+}
+input:hover{
+    color: gray;
+}
+button{
+    width: 2.5rem;
+    height: 1.8rem;   
+    font-size: 1.2rem; 
+    font-weight: 2px;
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(94, 153, 231);
+}
+button:hover{
+    color: rgb(20, 126, 179);
+    background-color: #DDD;
+    left: .1em;
 }

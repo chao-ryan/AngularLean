@@ -9,6 +9,7 @@ import { GradeBtnComponent } from './commo-component/grade-btn-component/grade-b
 import { HeroDetailComponent } from './commo-component/hero-detail/hero-detail.component';
 import { GradeTabComponent } from './commo-component/grade-tabComponent/grade-tab.component';
 import { GradeScoreComponent } from './commo-component/grade-score-component/grade-score.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,8 @@ import { GradeScoreComponent } from './commo-component/grade-score-component/gra
     GradeScoreComponent
   ],
   imports: [
-    BrowserModule,FormsModule                //FormsModule是使用双向数据绑定必须要的，否则浏览器无法正常工作
-  ],
+    BrowserModule,FormsModule,AppRoutingModule       // FormsModule是使用双向数据绑定必须要的，否则浏览器无法正常工作
+  ],                                                 // AppRoutingModule为添加的路由
   providers: [],
   bootstrap: [AppComponent]
 })

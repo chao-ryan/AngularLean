@@ -3,6 +3,7 @@ th{
     width: 10rem;
     height: 4rem;
     text-align: center;
+    color: rgb(245, 245, 230);
     background-color: rgb(94, 153, 231);
 }
 td{
@@ -10,6 +11,7 @@ td{
     width: 10rem;
     height: 3rem;
     text-align: center;
+    color: rgb(48, 46, 46);
     background-color: rgb(147, 200, 209);
 }
 button{

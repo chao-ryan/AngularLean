@@ -3,7 +3,7 @@ import { BaseService } from '../../commo-service/baseService.service';
 import { SCORE_ORIGIN_STYLE_MARK, SCORE_NOT_QUALIFIED_STYLE_MARK } from '../../const-def/grade-const-def';
 
 /**
- * GradeBtnComponent 这是一个组件
+ * GradeBtnComponent 这是一个组件   <grade-btn-app>路由：http://localhost:4200/grade
  */
 @Component({
   selector: 'grade-btn-app',
@@ -30,7 +30,12 @@ export class GradeBtnComponent implements OnInit {
    */
   getData():void{
     // 将获取到的数据originJsonObj放入与子组件属性绑定的数据对象data
-    this.ngOnInit();
+    // 将获取到的数据进行json转化，并赋值给变量jsonObj
+    this.jsonObj = this.getJsonObj(this.baseService.getStrDataFromGrade());
+    // 将初始jsonObj放入originJsonObj
+    this.originJsonObj = this.jsonObj;
+    // 初始化成绩栏样式
+    this.scoreStyle = SCORE_ORIGIN_STYLE_MARK;
       console.log("getData事件： 从远程服务器获取数据");
   }
 
@@ -65,11 +70,6 @@ export class GradeBtnComponent implements OnInit {
 
   // 初始化操作，所有的逻辑代码必须放置在方法体中
   ngOnInit(){
-    // 将获取到的数据进行json转化，并赋值给变量jsonObj
-    this.jsonObj = this.getJsonObj(this.baseService.getStrDataFromGrade());
-    // 将初始jsonObj放入originJsonObj
-    this.originJsonObj = this.jsonObj;
-    // 初始化成绩栏样式
-    this.scoreStyle = SCORE_ORIGIN_STYLE_MARK;
+    
   }
 }
