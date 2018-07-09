@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class MessageService{
-    messages:string[] = [];
+    messages: string[] = [];
 
     /**
      * add 往缓存中添加一条消息
