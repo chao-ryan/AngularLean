@@ -10,16 +10,18 @@ import { HeroDetailComponent } from './commo-component/hero-detail/hero-detail.c
 import { GradeTabComponent } from './commo-component/grade-tabComponent/grade-tab.component';
 import { GradeScoreComponent } from './commo-component/grade-score-component/grade-score.component';
 import { AppRoutingModule } from './app-routing.module';
-import { MessagesComponent } from './commo-component/messages-component/messages.component';
+import { DashboardComponent } from './commo-component/dash-board-component/dash-board.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,MockComponent,
     GradeTabComponent,GradeBtnComponent,GradeScoreComponent,
-    HeroesComponent,HeroDetailComponent,MessagesComponent    
+    HeroesComponent,HeroDetailComponent,DashboardComponent
   ],
   imports: [
-    BrowserModule,FormsModule,AppRoutingModule       // FormsModule是使用双向数据绑定必须要的，否则浏览器无法正常工作
+    BrowserModule,FormsModule,AppRoutingModule,
+    HttpClientModule       // FormsModule是使用双向数据绑定必须要的，否则浏览器无法正常工作
   ],                                                 // AppRoutingModule为添加的路由
   providers: [],
   bootstrap: [AppComponent]

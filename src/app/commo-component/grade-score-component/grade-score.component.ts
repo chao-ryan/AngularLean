@@ -38,7 +38,7 @@ export class GradeScoreComponent implements OnInit {
 //   }
 
 incScoreClick(){
-    if(this.score >= 0 && this.score <= 100){
+    if(this.score >= 0 && this.score < 100){
         this.score = this.score + 1;
     }
 }

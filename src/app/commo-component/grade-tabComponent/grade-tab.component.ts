@@ -1,6 +1,5 @@
 import { Component , OnInit, Input} from '@angular/core';
 import { BaseService } from '../../commo-service/baseService.service';
-import { Grade } from '../../commo-module/grade';
 
 /**
  * GradeHeaderComponent 这是一个组件
@@ -16,21 +15,11 @@ export class GradeTabComponent implements OnInit {
 @Input() jsonObj:any;
 // 成绩栏字体颜色--从从GradeBtnComponent.scoreStyle获得
 @Input() scoreStyle: string;
-
-// json对象中的header数组
-headers:any;
-// json对象中的data数组--间接送给送给GradeScoreComponent.score
-datas:any;
-// 用于向下一子组件传递样式值--送给GradeScoreComponent.scoreStyle
-scoreStyleTmp:string;
   
 // 构造器
 constructor(){}
 
 // 初始化操作，所有的逻辑代码必须放置在方法体中
 ngOnInit(){
-    this.headers = this.jsonObj.header;
-    this.datas = this.jsonObj.data;
-    this.scoreStyleTmp = this.scoreStyle;
   }
 }
