@@ -6,11 +6,11 @@
             <th>{{jsonObj.header[2]}}</th>
         </thead>
         <tbody>
-            <tr *ngFor = "let data of jsonObj.data">
+            <tr *ngFor = "let data of jsonObj.data; index as idx">
             <td>{{data.MyID}}</td>
             <td>{{data.MyName}}</td>
             <td class="scoreRow">
-                <grade-score-app [score]="data.Score" [scoreStyle]="scoreStyle"></grade-score-app>            
+                <grade-score-app [score]="data.Score" [dataObj]="jsonObj.data" [index]="idx" [mathFlag]="mathFlag" [result]="result"></grade-score-app>            
             </td>
         </tr>
         </tbody>    

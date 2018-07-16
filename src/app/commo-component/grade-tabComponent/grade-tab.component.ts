@@ -12,9 +12,10 @@ import { BaseService } from '../../commo-service/baseService.service';
 })
 export class GradeTabComponent implements OnInit {
 // 带有单向输入@Input装饰器的属性--从GradeBtnComponent.originJsonObj获得
-@Input() jsonObj:any;
-// 成绩栏字体颜色--从从GradeBtnComponent.scoreStyle获得
-@Input() scoreStyle: string;
+@Input() jsonObj: Object;
+// 判断成绩是否不合格 是：true，否：false
+@Input() mathFlag: Boolean;
+@Input() result: any;
   
 // 构造器
 constructor(){}

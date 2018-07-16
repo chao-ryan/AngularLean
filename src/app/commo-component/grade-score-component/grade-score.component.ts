@@ -11,9 +11,22 @@ import { Component , OnInit, Input} from '@angular/core';
 export class GradeScoreComponent implements OnInit {
 // 成绩--从从GradeTabComponent.data.Score获得
 @Input() score: number;
-// 成绩栏字体颜色--从GradeTabComponent.scoreStyleTmp获得
-@Input() scoreStyle: string;
+// data对象，从GradeTabComponent
+@Input() dataObj: any;
+// 数组下标
+@Input() index: any;
+// 判断成绩是否不合格 是：true，否：false
+@Input() mathFlag: Boolean;
+@Input() result: any;
 
+
+// 构造器--构造一个服务组件（必须）
+constructor(){}
+
+  // 初始化操作，所有的逻辑代码必须放置在方法体中
+  ngOnInit(){
+    
+  }
 
 /**
  * incScoreClick 加-点击事件处理
@@ -39,7 +52,13 @@ export class GradeScoreComponent implements OnInit {
 
 incScoreClick(){
     if(this.score >= 0 && this.score < 100){
-        this.score = this.score + 1;
+        for(let i = 0; i < this.dataObj.length; i++){
+            if(this.index === i){
+                this.score = this.score + 1;
+                this.dataObj[i].Score = this.score;
+            }
+        }
+        
     }
 }
 
@@ -61,16 +80,25 @@ incScoreClick(){
 //   }
 decScoreClick(){
     if(this.score >= 0 && this.score <= 100){
-        this.score = this.score - 1;
+        for(let i = 0; i < this.dataObj.length; i++){
+            if(this.index === i){
+                this.score = this.score - 1;
+                this.dataObj[i].Score = this.score;
+            }
+        }
+        
     }
 }
 
-// 构造器--构造一个服务组件（必须）
-constructor(){}
-
-  // 初始化操作，所有的逻辑代码必须放置在方法体中
-  ngOnInit(){
-
-  }
+// checkScore(){
+//     if(this.mathFlag){
+//         for(let i = 0; i < this.dataObj.length; i++){
+//             if(this.index === i && this.dataObj[i].Score < 60){
+//                 this.result = true;
+//                 console.log(this.dataObj[i].Score,"is",this.result);
+//             }
+//         }
+//     }
+// }
 
 }

@@ -22,11 +22,12 @@
 .common{
     color: black;
 }
-.not-qualified{
+.upset{
     color: red;
 }
 input{
     width: 2rem;
+    /* color: red; */
     font-size: 1.2rem;
     border-style: none;
     background-color: rgb(147, 200, 209);
