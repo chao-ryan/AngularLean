@@ -1,0 +1,34 @@
+<div>
+    <div class="filterName-box">
+        フイルタ名前
+        <input type="text" #box (keyup)="onKey(box.value)">
+    </div>
+    <div class="showFlag-box">
+        フイルタフラグ表示
+        <input type="radio" value="true" [(ngModel)]="flag">&nbsp;&nbsp;true&nbsp;&nbsp;
+        <input type="radio" value="false" [(ngModel)]="flag">&nbsp;&nbsp;false&nbsp;&nbsp;
+        {{flag}}
+    </div>
+    <div class="content-box">
+        フイルタ对象
+        <div class="content">
+            <ul>
+                <li *ngFor="let content of contents;index as idx">
+                    フイルタ{{idx+1}}
+                    <div class="content-dis">
+                        <input type="button" class="common" value="select" (click)="getFilterContent(idx)" [class.selected]="styleFlag">
+                        {{content.filterCol}}{{content.filterColCode}}{{content.filterCondCode}}{{content.filterInput}}{{content.isEdit}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn-box">
+        <button type="button" (click)="openFilterInput()">开始</button>
+    </div>   
+    <div class="display-box" *ngIf="showFlag">
+        <div class="filterNameDisplay">filterName: {{filterName}}</div>
+        <div class="showFlagDisplay">showFlag: {{showFlag}}</div>
+        <div class="contentsDisplay">contents: {{contents}}</div>
+    </div>
+</div>

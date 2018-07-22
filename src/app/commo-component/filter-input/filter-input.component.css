@@ -1,0 +1,60 @@
+.filterName-box{
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+    padding-top: 5%; 
+    background-color: rgba(221, 214, 214, 0.705);
+}
+.filterName-box input{
+    width: 45%;
+    height: 1.8rem;
+    font-size: 1rem;
+    color: rgb(180, 189, 197);
+    border: solid 2px rgb(139, 214, 243);
+    border-radius: 3px;
+}
+.filterName-box input:hover{
+    color: rgb(0, 140, 255);
+}
+.showFlag-box{
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+    padding-top: 0.5rem; 
+    background-color: rgba(221, 214, 214, 0.705);
+}
+.content-box{
+    width: 100%;
+    font-size: 1rem;
+    padding-top: 0.5rem; 
+    background-color: rgba(221, 214, 214, 0.705);
+}
+.btn-box{
+    width: 100%;
+    padding-left: 25%;
+}
+.btn-box button{
+    width: 25%;
+    height: 20%;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(57, 136, 253);
+}
+.content-dis{
+    width: 80%;
+    height: 2rem;
+    padding-left: 5%;
+}
+.common{
+    width: 15%;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: darkgrey;
+}
+.selected{
+    color: white;
+    background-color: rgb(47, 139, 243);
+}

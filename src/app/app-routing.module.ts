@@ -6,6 +6,7 @@ import { MockComponent } from "./commo-component/mock/mock-data.component";
 import { GradeBtnComponent } from "./commo-component/grade-btn-component/grade-btn.component";
 import { DashboardComponent } from "./commo-component/dash-board-component/dash-board.component";
 import { HeroDetailComponent } from "./commo-component/hero-detail/hero-detail.component";
+import { FilterInputComponent } from "./commo-component/filter-input/filter-input.component";
 
 // 路由定义
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path:'dashboard', component:DashboardComponent},
     {path:'', redirectTo: '/dashboard', pathMatch: 'full'},  // 把一个与空路径“完全匹配”的 URL 重定向到路径为 '/dashboard' 的路由
     {path:'detail/:id', component: HeroDetailComponent},
+    {path:'filter-input', component: FilterInputComponent}
 ];
 
 

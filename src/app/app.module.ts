@@ -12,12 +12,14 @@ import { GradeScoreComponent } from './commo-component/grade-score-component/gra
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './commo-component/dash-board-component/dash-board.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterInputComponent } from './commo-component/filter-input/filter-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,MockComponent,
     GradeTabComponent,GradeBtnComponent,GradeScoreComponent,
-    HeroesComponent,HeroDetailComponent,DashboardComponent
+    HeroesComponent,HeroDetailComponent,DashboardComponent,
+    FilterInputComponent
   ],
   imports: [
     BrowserModule,FormsModule,AppRoutingModule,
