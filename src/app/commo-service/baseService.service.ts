@@ -1,25 +1,28 @@
 import { Injectable } from "@angular/core";
 import { Grade } from "../commo-module/grade";
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { HttpResponse } from '../../../node_modules/@angular/common/http';
+import { LoggerService } from "./logger.service";
 
 /**
  * BaseService 这是一个普通服务类service
  */
 @Injectable()
 export class BaseService{
-    phone: string;
 
     /**
      * 构造器 注入消息Service
      */
-    constructor(private httpClient: HttpClient){}
+    constructor(
+        private httpClient: HttpClient,
+        private logger: LoggerService
+    ){}
 
     /**
      * ngOnInit 初始化方法
      */
     ngOnInit(){
-        this.getStrDataFromGrade();
+        
     }
 
     
@@ -35,6 +38,7 @@ export class BaseService{
      * getGradeData 获取属性gradeData
      */
     getGradeData(){
+        this.logger.log("Welcome to use LoggerService, god bless you");
         return new Grade().gradeData;
     }
 

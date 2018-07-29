@@ -1,7 +1,11 @@
+import { Injectable } from "@angular/core";
+
 /**
  * 服务类，用于将日志记录到浏览器的控制台
  */
-
+@Injectable({
+    providedIn: 'root',
+})
 export class LoggerService{
     /**
      * 输出日志信息
