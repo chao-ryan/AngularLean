@@ -1,18 +1,21 @@
-<div *ngIf="jsonObj">
+<div *ngIf="grade">
     <table>
         <thead>
-            <th>{{jsonObj.header[0]}}</th>
-            <th>{{jsonObj.header[1]}}</th>
-            <th>{{jsonObj.header[2]}}</th>
+            <th *ngFor="let column of grade.columnConfig" [class.cssName]="column.display === '0'">
+                <span>{{column.columnDisplayName}}</span>
+            </th>
         </thead>
         <tbody>
-            <tr *ngFor = "let data of jsonObj.data; index as idx">
-            <td>{{data.MyID}}</td>
-            <td>{{data.MyName}}</td>
-            <td class="scoreRow">
-                <grade-score-app [score]="data.Score" [dataObj]="jsonObj.data" [index]="idx" [mathFlag]="mathFlag" [result]="result"></grade-score-app>            
-            </td>
-        </tr>
+            <tr *ngFor = "let data of grade.data; index as idx">
+                <td *ngIf="grade.columnConfig[0].display === '1'" >{{data.MyID}}</td>
+                <td *ngIf="grade.columnConfig[1].display === '1'">{{data.MyName}}</td>
+                <td class="scoreRow" *ngIf="grade.columnConfig[2].display === '1'">
+                    <grade-score-app [score]="data.Math" [dataObj]="grade" [index]="idx" [columnIndex]="grade.columnConfig[2].index" [flag]="data.mathFlag"  ></grade-score-app>            
+                </td>
+                <td class="scoreRow" *ngIf="grade.columnConfig[3].display === '1'">
+                    <grade-score-app [score]="data.English" [dataObj]="grade" [index]="idx" [columnIndex]="grade.columnConfig[3].index" [flag]="data.englishFalg"></grade-score-app>            
+                </td>
+            </tr>
         </tbody>    
 </table>
 </div>

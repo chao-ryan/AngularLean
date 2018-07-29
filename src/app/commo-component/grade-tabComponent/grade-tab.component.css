@@ -34,3 +34,6 @@ button{
     border-style: none;
     background-color: rgb(147, 200, 209);
 }
+.cssName{
+    display: none;
+}

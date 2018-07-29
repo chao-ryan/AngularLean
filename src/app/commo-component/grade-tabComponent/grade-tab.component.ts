@@ -12,15 +12,15 @@ import { BaseService } from '../../commo-service/baseService.service';
 })
 export class GradeTabComponent implements OnInit {
 // 带有单向输入@Input装饰器的属性--从GradeBtnComponent.originJsonObj获得
-@Input() jsonObj: Object;
-// 判断成绩是否不合格 是：true，否：false
-@Input() mathFlag: Boolean;
-@Input() result: any;
-  
+@Input() grade: any;
+
+
 // 构造器
 constructor(){}
 
-// 初始化操作，所有的逻辑代码必须放置在方法体中
+// 页面初期化
 ngOnInit(){
   }
+
+
 }

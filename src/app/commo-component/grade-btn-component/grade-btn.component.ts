@@ -1,6 +1,10 @@
 import { Component , OnInit} from '@angular/core';
 import { BaseService } from '../../commo-service/baseService.service';
-import * as ConstDef from '../../const-def/grade-const-def';
+import { HttpResponse } from '@angular/common/http';
+import { ColumnConfigDto } from '../../common-dto/column-config.dto';
+import * as GradeConstDef from '../../const-def/grade-const-def';
+import { GradeDataDto } from '../../common-dto/grade-data.dto';
+import { GradeDto } from '../../common-dto/grade.dto';
 
 /**
  * GradeBtnComponent 这是一个组件   <grade-btn-app>路由：http://localhost:4200/grade
@@ -12,31 +16,70 @@ import * as ConstDef from '../../const-def/grade-const-def';
   providers:[BaseService]                       //注册服务提供商（如果要用服务，则必须注册）
 })
 export class GradeBtnComponent implements OnInit {
-  // 定义需要用到的变量，并将其类型设置为万能型any
-  jsonObj: any;
-  // 原始数据jsonObj--送给GradeTabComponent.jsonObj
-  originJsonObj: Object;
-  // 模拟数据json
-  gradeJsonObj: any;
-  // 成绩栏样式--送给GradeScoreComponent.scoreStyle
-  scoreStyle: string;
-    // 响应数据中的属性column_config
+  // 响应数据中的属性column_config
    jsonObjColumn: any
-   // 响应数据中的属性data
+  // 响应数据中的属性data
    jsonObjData: any;
-   // 整个响应数据
+  // 整个响应数据
    httpData: any;
-   // 成绩是否不合格 是：true，否：false
-   mathFlag: Boolean;
-   result: Array<number>;
+  // 模拟数据临时变量 
+   gradeData: any;
+   // 模拟数据dto
+   grade = new GradeDto();
+   // tab页面表示、非表示flag   true--表示，false-- 非表示
+   showFlag: boolean;
 
-  // 构造器--构造一个服务组件（必须）
+  // 
+  /**
+   * 构造器
+   * @param baseService --构造一个服务组件（必须）
+   */
   constructor(private baseService: BaseService){
     
   }
-
-  // 初始化操作，所有的逻辑代码必须放置在方法体中
+ 
+  /**
+   * 页面初期化
+   */
   ngOnInit(){
+    // 成绩栏目list初期化为空
+    this.grade.columnConfig = [];
+    // 成绩data数据初期化为空
+    this.grade.data = [];
+    // 获取成绩数据
+    this.gradeData = this.baseService.getGradeData();
+    // 初期化成绩dto
+    this.initGrade();
+  }
+
+  /**
+   * initGrade 数据初期化
+   */
+  initGrade(){
+    // tab页面表示、非表示flag 初期化为 false--非表示
+    this.showFlag = false;
+    // 成绩栏目数据dto初期化
+    for(let i = 0; i < this.gradeData.column_config.length; i++){
+      let column = new ColumnConfigDto();
+      column.index = this.gradeData.column_config[i].index;
+      column.width = this.gradeData.column_config[i].width;
+      column.display = this.gradeData.column_config[i].display;
+      column.columnDisplayName = this.gradeData.column_config[i].column_disp_name;
+      column.type = this.gradeData.column_config[i].type;
+      column.cssName = this.gradeData.column_config[i].css_name;
+      this.grade.columnConfig.push(column);
+    }
+    // 成绩data数据dto初期化
+    for(let j = 0; j < this.gradeData.data.length; j++){
+      let dataTmp = new GradeDataDto();
+      dataTmp.MyID = GradeConstDef.GRADE_BANK;
+      dataTmp.MyName = GradeConstDef.GRADE_BANK;
+      dataTmp.Math = GradeConstDef.GRADE_SCOE_0;
+      dataTmp.English = GradeConstDef.GRADE_SCOE_0;
+      dataTmp.mathFlag = false;
+      dataTmp.englishFalg = false;
+      this.grade.data.push(dataTmp);
+    }
     
   }
 
@@ -47,37 +90,41 @@ export class GradeBtnComponent implements OnInit {
     // 使用post向远程服务器发起请求，这里的this指代GradeBtnComponent，因为是这个class需要对数据做处理
     // 传入callback，以便将对响应数据的处理挂载到http线路上，解决CPU空载问题
     // this.httpData = this.baseService.post(this, this.callback);
-    this.getGradeMock();
+    for(let j = 0; j < this.gradeData.data.length; j++){
+      this.getGradeData(j)
+    }
+    // tab页面表示、非表示flag 设置为 true-- 表示
+    this.showFlag = true;
+    console.log(this.grade);
   }
 
   /**
    * checkData Click事件：检查成绩是否大于60
    */
   checkData(){
-    // 检查成绩是否合格
-    this.scoreCheck();
-    console.log("checkData事件： 检查表格中Math列中的成绩，小于60的变成红色");
-  }
-
-  /**
-   * isGradeQualified 检查成绩是否合格
-   */
-  scoreCheck(){
-    let data = this.jsonObj.data;
-    console.log("jsonObj.data: ",data);
-    for(let i = 0; i < data.length; i++){
-      if(data[i].Score > 60){
-        this.mathFlag = false;        
-        console.log("结果是：",this.mathFlag);
-        console.log("合格的分数是：",data[i].Score);
-      }else{
-        this.mathFlag = true;
-        this.result.push(i);
-        console.log("不合格的分数是：",data[i].Score);
-        console.log("结果是： ",this.mathFlag);
+    if(this.grade){
+      for(let i = 0; i < this.grade.data.length; i++){
+        // 判断数学分数是否及格
+        if(this.grade.data[i].Math < 60){
+          // 数学分数 < 60时，对应flag设置为true
+          this.grade.data[i].mathFlag = true;
+        }else{
+          // 上述以外的情况，对应flag设置为false
+          this.grade.data[i].mathFlag = false;
+        }
+        // 判断英语分数是否及格
+        if(this.grade.data[i].English < 60){
+          // 英语分数 < 60 时，对应flag设置为true
+          this.grade.data[i].englishFalg = true;
+        }else{
+          // 上述以外的情况，对应flag设置为false
+          this.grade.data[i].englishFalg = false;
+        }
       }
     }
+    
   }
+
 
   /**
    * getJson 获取json Object对象
@@ -86,27 +133,30 @@ export class GradeBtnComponent implements OnInit {
   getJsonObj(strJson:any): any{
     return JSON.parse(strJson);
   }
+  
   /**
-   * getGradeMock 获取数据（模拟数据）
+   * getGradeData 获取成绩data数据
+   * @param idx 下标
    */
-  getGradeMock(){
-    // 将获取到的数据originJsonObj放入与子组件属性绑定的数据对象data
-    // 将获取到的数据进行json转化，并赋值给变量jsonObj
-    this.gradeJsonObj = this.getJsonObj(this.baseService.getStrDataFromGrade());
-    this.jsonObj = this.gradeJsonObj;
-    // 初始化成绩栏样式
-    this.scoreStyle = ConstDef.SCORE_ORIGIN_STYLE_MARK;
-      console.log("getData事件： 从远程服务器获取数据");
+  getGradeData(idx: number){
+    let dataTmp = new GradeDataDto();
+    this.grade.data[idx].MyID = this.gradeData.data[idx].MyID;
+    this.grade.data[idx].MyName = this.gradeData.data[idx].MyName;
+    this.grade.data[idx].Math = this.gradeData.data[idx].Math;
+    this.grade.data[idx].English = this.gradeData.data[idx].English;
   }
+
   /**
    * callback 回调函数，用于对接收到的http数据进行处理
    * @param ctroller 控制对象（自身）
    * @param response http响应体
    */
-  callback(ctroller: GradeBtnComponent, response: any){
-    // 将响应数据中的column_config属性解析
-    this.jsonObjColumn = this.getJsonObj(response).column_config;
-    // 将响应数据中的data属性解析
-    this.jsonObjData = this.getJsonObj(response).data;
-  }
+  callback(ctroller: GradeBtnComponent, response: HttpResponse<string>){
+    // 获取http响应数据
+    this.httpData = this.getJsonObj(response.body);
+    // 获取响应数据中的column_config属性
+    this.jsonObjColumn = this.httpData.column_config;
+    // 获取响应数据中的data属性
+    this.jsonObjData = this.httpData.data;
+  }  
 }

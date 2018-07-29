@@ -32,6 +32,13 @@ export class BaseService{
     }
 
     /**
+     * getGradeData 获取属性gradeData
+     */
+    getGradeData(){
+        return new Grade().gradeData;
+    }
+
+    /**
      * post http请求
      * @param controller 控制对象
      * @param callback  回调函数

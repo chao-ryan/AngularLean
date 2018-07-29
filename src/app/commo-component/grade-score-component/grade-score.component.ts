@@ -1,4 +1,5 @@
 import { Component , OnInit, Input} from '@angular/core';
+import * as GradeConstDef from '../../const-def/grade-const-def';
 
 /**
  * GradeHeaderComponent 这是一个组件
@@ -15,9 +16,10 @@ export class GradeScoreComponent implements OnInit {
 @Input() dataObj: any;
 // 数组下标
 @Input() index: any;
-// 判断成绩是否不合格 是：true，否：false
-@Input() mathFlag: Boolean;
-@Input() result: any;
+// 现在表示名称
+@Input() columnIndex: any;
+// 现在分数是否不合格flag   true--否，false--是
+@Input() flag: boolean;
 
 
 // 构造器--构造一个服务组件（必须）
@@ -51,14 +53,15 @@ constructor(){}
 //   }
 
 incScoreClick(){
-    if(this.score >= 0 && this.score < 100){
-        for(let i = 0; i < this.dataObj.length; i++){
-            if(this.index === i){
-                this.score = this.score + 1;
-                this.dataObj[i].Score = this.score;
+    if(this.score >= 0 && this.score < 100){        
+        for(let i = 0; i < this.dataObj.data.length; i++){
+            if(this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_3){
+                this.dataObj.data[i].Math++;
             }
-        }
-        
+            if(this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_4){
+                this.dataObj.data[i].English++;
+            }
+        }        
     }
 }
 
@@ -80,10 +83,12 @@ incScoreClick(){
 //   }
 decScoreClick(){
     if(this.score >= 0 && this.score <= 100){
-        for(let i = 0; i < this.dataObj.length; i++){
-            if(this.index === i){
-                this.score = this.score - 1;
-                this.dataObj[i].Score = this.score;
+        for(let i = 0; i < this.dataObj.data.length; i++){
+            if(this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_3){
+                this.dataObj.data[i].Math--;
+            }
+            if(this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_4){
+                this.dataObj.data[i].English--;
             }
         }
         

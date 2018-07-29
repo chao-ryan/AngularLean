@@ -14,7 +14,7 @@ const routes: Routes = [
     {path:'mock', component: MockComponent},      // <mock-app>路由：http://localhost:4200/mock
     {path:'grade', component: GradeBtnComponent}, // <grade-btn-app>路由：http://localhost:4200/grade
     {path:'dashboard', component:DashboardComponent},
-    {path:'', redirectTo: '/dashboard', pathMatch: 'full'},  // 把一个与空路径“完全匹配”的 URL 重定向到路径为 '/dashboard' 的路由
+    // {path:'', redirectTo: '/dashboard', pathMatch: 'full'},  // 把一个与空路径“完全匹配”的 URL 重定向到路径为 '/dashboard' 的路由
     {path:'detail/:id', component: HeroDetailComponent},
     {path:'filter-input', component: FilterInputComponent}
 ];

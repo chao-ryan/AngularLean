@@ -1,9 +1,9 @@
 <div class="grade-btn">
     <div class="btn-box">
-        <div class="getData-btn" [class.selected]="originJsonObj === jsonObj" (click)="getData()">
+        <div class="getData-btn" (click)="getData()">
             <button type="button">getData</button>
         </div>
-        <div class="checkData-btn" [class.selected]="checkScore === originScore" (click)="checkData()">
+        <div class="checkData-btn" (click)="checkData()">
             <button type="button">checkData</button>
         </div>
     </div><br/>
@@ -11,5 +11,5 @@
         
     </div>
 </div>
-<grade-tab-app [jsonObj]="jsonObj" [mathFlag]="mathFlag" [result]="result"></grade-tab-app>
+<grade-tab-app *ngIf="showFlag" [grade]="grade"></grade-tab-app>
 
