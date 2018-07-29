@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './commo-component/dash-board-component/dash-board.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterInputComponent } from './commo-component/filter-input/filter-input.component';
+import { CommoModule } from "./utility/commo.module";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { FilterInputComponent } from './commo-component/filter-input/filter-inpu
     FilterInputComponent
   ],
   imports: [
-    BrowserModule,FormsModule,AppRoutingModule,
+    BrowserModule,FormsModule,AppRoutingModule,CommoModule,
     HttpClientModule       // FormsModule是使用双向数据绑定必须要的，否则浏览器无法正常工作
   ],                                                 // AppRoutingModule为添加的路由
   providers: [],
