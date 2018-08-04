@@ -5,6 +5,7 @@ import { GradeBtnComponent } from "../commo-component/grade-btn-component/grade-
 import { DashboardComponent } from "../commo-component/dash-board-component/dash-board.component";
 import { HeroDetailComponent } from "../commo-component/hero-detail/hero-detail.component";
 import { FilterInputComponent } from "../commo-component/filter-input/filter-input.component";
+import { ViewFilterComponent } from "../commo-component/view-filter/view-filter.component";
 
  // 路由定义
  export const REUTES: Routes = [
@@ -14,5 +15,6 @@ import { FilterInputComponent } from "../commo-component/filter-input/filter-inp
     {path:'dashboard', component:DashboardComponent},
     // {path:'', redirectTo: '/dashboard', pathMatch: 'full'},  // 把一个与空路径“完全匹配”的 URL 重定向到路径为 '/dashboard' 的路由
     {path:'detail/:id', component: HeroDetailComponent},
-    {path:'filter-input', component: FilterInputComponent}
+    {path:'filter-input', component: FilterInputComponent},
+    {path: 'view-filter', component: ViewFilterComponent}
 ];

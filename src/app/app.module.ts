@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './commo-component/dash-board-component/dash-board.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterInputComponent } from './commo-component/filter-input/filter-input.component';
+import { ViewFilterComponent } from './commo-component/view-filter/view-filter.component';
 import { CommoModule } from "./utility/commo.module";
 import { ItemDirective } from "./directive/item.directive";
 
@@ -21,7 +22,7 @@ import { ItemDirective } from "./directive/item.directive";
     AppComponent,MockComponent,
     GradeTabComponent,GradeBtnComponent,GradeScoreComponent,
     HeroesComponent,HeroDetailComponent,DashboardComponent,
-    FilterInputComponent,ItemDirective
+    FilterInputComponent,ItemDirective,ViewFilterComponent
   ],
   imports: [
     BrowserModule,FormsModule,AppRoutingModule,CommoModule,

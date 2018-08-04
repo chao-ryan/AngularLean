@@ -4,9 +4,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as ConstDef from '../../const-def/filter-input-const-def';
 import { FilterInputData } from '../../common-dto/filter-input-data.dto';
-import { FilterInputCol } from '../../common-dto/filter-input-col.dto';
-import { FilterInputCondCom } from '../../common-dto/filter-input-condCom.dto';
-import { FilterInputContent } from '../../common-dto/filter-input-content.dto';
 import { FilterData } from '../../common-dto/filter-data.dto';
 
 
