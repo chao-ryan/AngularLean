@@ -19,13 +19,13 @@ import { ItemDirective } from "./directive/item.directive";
 
 @NgModule({
   declarations: [
-    AppComponent,MockComponent,
-    GradeTabComponent,GradeBtnComponent,GradeScoreComponent,
-    HeroesComponent,HeroDetailComponent,DashboardComponent,
-    FilterInputComponent,ItemDirective,ViewFilterComponent
+    AppComponent, MockComponent,
+    GradeTabComponent, GradeBtnComponent, GradeScoreComponent,
+    HeroesComponent, HeroDetailComponent, DashboardComponent,
+    FilterInputComponent, ItemDirective, ViewFilterComponent
   ],
   imports: [
-    BrowserModule,FormsModule,AppRoutingModule,CommoModule,
+    BrowserModule, FormsModule, AppRoutingModule, CommoModule,
     HttpClientModule       // FormsModule是使用双向数据绑定必须要的，否则浏览器无法正常工作
   ],                                                 // AppRoutingModule为添加的路由
   providers: [],

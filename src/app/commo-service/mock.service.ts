@@ -12,13 +12,9 @@ export class MockService{
      * getJsonStr 获取json字符串
      * @return 返回一个string
      */
-    getJsonStr():string{
+    getJsonStr(): string{
         return new MockData().strData;
     }
 
     constructor(){}
-
-    ngOnInit(){
-        this.getJsonStr();
-    }
 }

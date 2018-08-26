@@ -91,4 +91,4 @@ export const FILTER_DATA = {
             isEdit: '0'
         }
     ]
-}
+};

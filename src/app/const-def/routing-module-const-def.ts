@@ -9,8 +9,8 @@ import { ViewFilterComponent } from "../commo-component/view-filter/view-filter.
 
  // 路由定义
  export const REUTES: Routes = [
-    {path:'heroes', component: HeroesComponent},  // <hero-app>路由：http://localhost:4200/heroes
-    {path:'mock', component: MockComponent},      // <mock-app>路由：http://localhost:4200/mock
+    {path:'heroes', component: HeroesComponent},  // <app-hero>路由：http://localhost:4200/heroes
+    {path:'mock', component: MockComponent},      // <app-mock>路由：http://localhost:4200/mock
     {path:'grade', component: GradeBtnComponent}, // <grade-btn-app>路由：http://localhost:4200/grade
     {path:'dashboard', component:DashboardComponent},
     // {path:'', redirectTo: '/dashboard', pathMatch: 'full'},  // 把一个与空路径“完全匹配”的 URL 重定向到路径为 '/dashboard' 的路由

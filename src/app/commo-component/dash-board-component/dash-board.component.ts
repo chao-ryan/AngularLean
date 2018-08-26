@@ -6,14 +6,14 @@ import { HeroService } from '../../commo-service/heroes.service';
   selector: 'app-dashboard',
   templateUrl: './dash-board.component.html',
   styleUrls: [ './dash-board.component.css' ],
-  providers:[HeroService]
+  providers: [HeroService]
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
 
   /**
    * constructor 构造器
-   * @param heroService 
+   * @param heroService
    */
   constructor(private heroService: HeroService) { }
 
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.getHeroes();
   }
-  
+
   /**
    * getHeroes 获取英雄数据
    */

@@ -5,7 +5,7 @@ import * as GradeConstDef from '../../const-def/grade-const-def';
  * GradeHeaderComponent 这是一个组件
  */
 @Component({
-  selector: 'grade-score-app',
+  selector: 'app-grade-score',
   templateUrl: './grade-score.component.html',
   styleUrls: ['./grade-score.component.css']
 })
@@ -23,12 +23,10 @@ export class GradeScoreComponent implements OnInit {
 
 
 // 构造器--构造一个服务组件（必须）
-constructor(){}
+constructor() {}
 
   // 初始化操作，所有的逻辑代码必须放置在方法体中
-  ngOnInit(){
-    
-  }
+  ngOnInit() {}
 
 /**
  * incScoreClick 加-点击事件处理
@@ -52,16 +50,16 @@ constructor(){}
 //     }
 //   }
 
-incScoreClick(){
-    if(this.score >= 0 && this.score < 100){        
-        for(let i = 0; i < this.dataObj.data.length; i++){
-            if(this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_3){
+incScoreClick() {
+    if (this.score >= 0 && this.score < 100) {
+        for (let i = 0; i < this.dataObj.data.length; i++) {
+            if (this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_3) {
                 this.dataObj.data[i].Math++;
             }
-            if(this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_4){
+            if (this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_4) {
                 this.dataObj.data[i].English++;
             }
-        }        
+        }
     }
 }
 
@@ -81,17 +79,16 @@ incScoreClick(){
 //       }
 //     }
 //   }
-decScoreClick(){
-    if(this.score >= 0 && this.score <= 100){
-        for(let i = 0; i < this.dataObj.data.length; i++){
-            if(this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_3){
+decScoreClick() {
+    if (this.score >= 0 && this.score <= 100) {
+        for (let i = 0; i < this.dataObj.data.length; i++) {
+            if (this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_3) {
                 this.dataObj.data[i].Math--;
             }
-            if(this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_4){
+            if (this.index === i && this.columnIndex === GradeConstDef.GRADE_COLUMN_INDEX_4) {
                 this.dataObj.data[i].English--;
             }
         }
-        
     }
 }
 

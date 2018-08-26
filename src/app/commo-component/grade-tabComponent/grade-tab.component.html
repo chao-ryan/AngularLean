@@ -10,12 +10,12 @@
                 <td *ngIf="grade.columnConfig[0].display === '1'" >{{data.MyID}}</td>
                 <td *ngIf="grade.columnConfig[1].display === '1'">{{data.MyName}}</td>
                 <td class="scoreRow" *ngIf="grade.columnConfig[2].display === '1'">
-                    <grade-score-app [score]="data.Math" [dataObj]="grade" [index]="idx" [columnIndex]="grade.columnConfig[2].index" [flag]="data.mathFlag"  ></grade-score-app>            
+                    <app-grade-score [score]="data.Math" [dataObj]="grade" [index]="idx" [columnIndex]="grade.columnConfig[2].index" [flag]="data.mathFlag"  ></app-grade-score>
                 </td>
                 <td class="scoreRow" *ngIf="grade.columnConfig[3].display === '1'">
-                    <grade-score-app [score]="data.English" [dataObj]="grade" [index]="idx" [columnIndex]="grade.columnConfig[3].index" [flag]="data.englishFalg"></grade-score-app>            
+                    <app-grade-score [score]="data.English" [dataObj]="grade" [index]="idx" [columnIndex]="grade.columnConfig[3].index" [flag]="data.englishFalg"></app-grade-score>
                 </td>
             </tr>
-        </tbody>    
+        </tbody>
 </table>
 </div>

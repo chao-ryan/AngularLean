@@ -12,6 +12,14 @@
             "element",
             "app",
             "kebab-case"
-        ]
+        ],
+        // 尾部空格检测
+        "no-trailing-whitespace": false,
+        // 行内检测
+        "one-line": false,
+        // 引用规范，只能用单引号禁用
+        "quotemark": false,
+        // const偏好
+        "perfer-const": false
     }
 }

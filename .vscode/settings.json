@@ -83,5 +83,7 @@
           "vue",
           "typescript",
           "typescriptreact"
-      ]
+      ],
+      // 自动折行
+      "editor.wordWrap": "on",
 }

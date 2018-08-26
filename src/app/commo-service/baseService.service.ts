@@ -19,22 +19,6 @@ export class BaseService{
     ){}
 
     /**
-     * ngOnInit 初始化方法
-     */
-    ngOnInit(){
-        
-    }
-
-    
-    /**
-     * getStrDataFromGrade 获取Grade中的属性值  
-     * @return 返回一个字符串
-     */
-    getStrDataFromGrade(){         
-        return new Grade().strData;
-    }
-
-    /**
      * getGradeData 获取属性gradeData
      */
     getGradeData(){
@@ -59,16 +43,16 @@ export class BaseService{
             Pragma: "no-cache"
         };
         // 调用HttpClient.post方法，用于向远程服务器发起请求
-        return this.httpClient.post(url,postBody,{
+        return this.httpClient.post(url, postBody, {
             headers: postHeader,
             observe: "response",
             responseType: "text"
         })
-        .subscribe((response: HttpResponse<string>) =>{// 在这里调用回调函数，对相应结果的处理在这里操作
-            if(callback){
+        .subscribe((response: HttpResponse<string>) => {// 在这里调用回调函数，对相应结果的处理在这里操作
+            if (callback){
                 callback(controller, response.body);
             }
-        })
+        });
     }
-    
+
 }

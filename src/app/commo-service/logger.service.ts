@@ -12,7 +12,7 @@ export class LoggerService{
      * @param msg 一般日志信息
      */
     log(msg: any) {
-        console.log(msg);        
+        console.log(msg);
     }
 
     /**
@@ -20,7 +20,7 @@ export class LoggerService{
      * @param msg 错误日志信息
      */
     error(msg: any){
-        console.error(msg);        
+        console.error(msg);
     }
 
     /**
@@ -28,6 +28,6 @@ export class LoggerService{
      * @param msg 警告日志信息
      */
     warn(msg: any){
-        console.warn(msg);        
+        console.warn(msg);
     }
 }

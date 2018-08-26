@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class HeroService {
     // URL to web API
     private heroUrl = "api/heroes";
-   
+
   constructor(private http: HttpClient) { }
 
    /**
@@ -18,14 +18,13 @@ export class HeroService {
     }
 
     getHero(id: number): Hero{
-        let hero: Hero = undefined;
-        let heroes = HEROES;
-        for(let i = 0; i < heroes.length; i++){
-            if(heroes[i].id === id){
+        let hero: Hero;
+        const heroes = HEROES;
+        for (let i = 0; i < heroes.length; i++){
+            if (heroes[i].id === id){
                 hero = heroes[i];
             }
         }
         return hero;
     }
-
 }
